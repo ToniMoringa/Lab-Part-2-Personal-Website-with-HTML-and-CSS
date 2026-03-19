@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonia Muthwa · Developer Portfolio🌸</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Font Awesome for the sun/moon icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        
+        :root {
+            /* Color Palette */
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --primary-light: #818cf8;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            
+            /* Neutrals - Clean and modern - LIGHT MODE (default) */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-tertiary: #f3f4f6;
+            --surface: #ffffff;
+            --surface-hover: #f9fafb;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            
+            /* Text colors  */
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --text-tertiary: #9ca3af;
+            --text-inverse: #ffffff;
+            
+            /* Gradients   */
+            --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #8b5cf6 100%);
+            --gradient-subtle: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+            --gradient-card: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.02), 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.03), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.03), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            --shadow-hover: 0 25px 30px -12px rgba(0, 0, 0, 0.05);
+            
+            /* Borders */
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 16px;
+            --border-radius-xl: 24px;
+            --border-radius-full: 9999px;
+            
+            /* Typography */
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            
+            /* Transitions */
+            --transition-base: all 0.2s ease;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Dark Mode Variables */
+        body.dark-mode {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --surface: #1e293b;
+            --surface-hover: #2d3a4f;
+            --nav-bg: rgba(15, 23, 42, 0.8);
+            
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-tertiary: #94a3b8;
+            --text-inverse: #0f172a;
+            
+            --gradient-primary: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            --gradient-subtle: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 25px 30px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* General */
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Navigation*/
+        .nav {
+            background: var(--nav-bg);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-full);
+            transition: var(--transition-base);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+            background: var(--bg-tertiary);
+        }
+
+        /* Dark/Light Toggle Button */
+        .mode-toggle {
+            background: var(--bg-tertiary);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--border-radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+
+        .mode-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section - Like Eagle's homepage */
+        .hero {
+            padding: 6rem 2rem;
+            background: var(--gradient-subtle);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--gradient-primary);
+            color: var(--text-inverse);
+            border-radius: var(--border-radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin: 0 0 1.5rem 0;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 4rem 2rem;
+        }
+
+        .skills-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            background: var(--surface);
+            border-radius: var(--border-radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-smooth);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .skill-percentage {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .skill-bar-container {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-tertiary);
+            border-radius: var(--border-radius-full);
+            overflow: hidden;
+        }
+
+        .skill-bar {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius-full);
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        /* Divider */
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--text-tertiary), transparent);
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+         /* Icon on About section */
+        .profile-image-container {
+            width: 600px;  
+            height: 600px; 
+            margin: 0 auto 2rem auto;
+            padding: 6px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .profile-image {
+            width: 100%;  
+            height: 100%; 
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--surface);
+            display: block;
+            transition: var(--transition-smooth);
+        }
+
+        /* Hover Effects */
+        .profile-image-container:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-xl);
+            padding: 8px;
+        }
+
+        .profile-image-container:hover .profile-image {
+            transform: scale(1.02);
+            border-color: var(--primary-light);
+        }
+
+        .profile-image-container:hover::after {
+            opacity: 1;
+        }
+        /* Responsive adjustments for mobile */
+        @media (max-width: 768px) {
+            .profile-image-container {
+                width: 200px;  /* Smaller on mobile */
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-image-container {
+                width: 150px;  /* Even smaller on very small screens */
+                height: 150px;
+            }
+        }
+        /* Creative Corner Section */
+        .creative-section {
+            padding: 4rem 2rem;
+            background: var(--bg-secondary);
+        }
+
+        .creative-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .creative-description {
+            text-align: center;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.1rem;
+        }
+
+        .creative-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* Instagram  Card */
+        .instagram-card {
+            grid-column: 1 / -1;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .instagram-content {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .instagram-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            color: white;
+        }
+
+        .instagram-content p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .instagram-btn {
+            background: white;
+            color: var(--primary);
+            padding: 0.75rem 2rem;
+            border-radius: var(--border-radius-full);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-md);
+        }
+
+        .instagram-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            filter: brightness(1.05);
+        }
+
+        .instagram-btn i {
+            font-size: 1.3rem;
+            color: #e4405f;
+        }
+
+        /* Game Cards */
+        .game-card {
+            background: var(--surface);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .game-image {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+        }
+
+        .game-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .game-card:hover .game-image img {
+            transform: scale(1.05);
+        }
+
+        .game-content {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .game-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 0 0.75rem 0;
+            color: var(--text-primary);
+        }
+
+        .game-content p {
+            color: var(--text-secondary);
+            margin: 0 0 1rem 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .design-tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background: var(--primary-light);
+            color: white;
+            border-radius: var(--border-radius-full);
+            font-size: 0.7rem;
+            font-weight: 500;
+            margin-right: 0.3rem;
+            margin-bottom: 0.3rem;
+            opacity: 0.9;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 4rem 2rem;
+        }
+
+        .projects-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Cards  asset cards */
+        .card {
+            background: var(--surface);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: var(--transition-base);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Project Image */
+        .media-frame {
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: none;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition-smooth);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            color: var(--text-primary);
+        }
+
+        .project-content p {
+            color: var(--text-secondary);
+            margin: 0 0 1rem 0;
+            line-height: 1.6;
+        }
+
+        /* Tags */
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            border-radius: var(--border-radius-full);
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: var(--transition-base);
+        }
+
+        .tag:hover {
+            background: var(--primary-light);
+            color: var(--text-inverse);
+            transform: translateY(-1px);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius-full);
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border: none;
+            gap: 0.5rem;
+            text-decoration: none;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--text-inverse);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            filter: brightness(1.05);
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: var(--transition-base);
+            position: relative;
+        }
+
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-smooth);
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
+        .footer-link:hover::after {
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                padding: 4rem 1rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .creative-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer .container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .footer-links {
+                justify-content: center;
+            }
+
+            .instagram-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="nav">
+        <div class="nav-container">
+            <h1 class="logo">Antonia Muthwa</h1>
+            <nav class="nav-links">
+                <a href="https://github.com/ToniMoringa" target="_blank" class="nav-link">GitHub</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#creative" class="nav-link">Creative</a>
+                <!-- Dark/Light Toggle Button -->
+                <button id="modeToggle" class="mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="hero">
+            <div class="hero-content">
+                <span class="hero-badge">Developer & Creator</span>
+                <h1>Crafting digital experiences with code</h1>
+                <h2>Hi, I'm Antonia </h2>
+                <div class="profile-image-container">
+                    <img src="icon.png" alt="Antonia Muthwa" class="profile-image">
+                </div>
+                <p class="hero-description">I am an aspiring developer passionate about building functional and beautiful web applications. I love solving problems and constantly learning new technologies.</p>
+        
+        </section>
+
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2>Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML</span>
+                            <span class="skill-percentage">100%</span>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <span class="skill-name">CSS</span>
+                            <span class="skill-percentage">100%</span>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 95%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <span class="skill-name">Figma</span>
+                            <span class="skill-percentage">20%</span>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 20%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percentage">40%</span>
+                        </div>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" style="width: 40%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- CREATIVE CORNER SECTION  -->
+        <section id="creative" class="creative-section">
+            <div class="container">
+                <h2>🎮 Creative Corner</h2>
+            
+                <p class="creative-description">When I'm not coding, you'll find me playing the games below, creating 2D/3D art, or animating. I believe creativity and code go hand in hand!</p>
+
+                <!-- Instagram Feature Card -->
+                <div class="instagram-card">
+                    <div class="instagram-content">
+                        <h3>🎨 Art & Illustrations</h3>
+                        <p>Follow my creative journey on Instagram where I share 2D/3D art and illustrations</p>
+                    </div>
+                    <a href="https://instagram.com/tonton_co" target="_blank" class="instagram-btn">
+                        <i class="fab fa-instagram"></i>
+                        @tontonCo
+                    </a>
+                </div>
+
+                <!-- Games Grid -->
+                <div class="creative-grid">
+                    <!-- Game 1: Baldur's Gate 3 -->
+                    <div class="game-card">
+                        <div class="game-image">
+                            <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/59827b3d0abf2f29adacfe72fdfd11059d6974e2/capsule_616x353.jpg?t=1773079016" alt="Baldur's Gate 3">
+                        </div>
+                        <div class="game-content">
+                            <h3>Baldur's Gate 3</h3>
+                            <p>A masterpiece of storytelling and character customization. The attention to detail in character expressions and environmental storytelling inspires my approach to user experience design.</p>
+                            <div>
+                                <span class="design-tag">Character Design</span>
+                                <span class="design-tag">Narrative</span>
+                                <span class="design-tag">World-building</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Game 2: Team Fortress 2 (replaced Minecraft) -->
+                    <div class="game-card">
+                        <div class="game-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkxVakckg4XbbkiWHAT0uGxLZPWnG5kaWl7A&s" alt="Team Fortress 2">
+                        </div>
+                        <div class="game-content">
+                            <h3>Team Fortress 2</h3>
+                            <p>Iconic character design and distinct art style that's aged beautifully. The game's visual identity - from class silhouettes to the comic-book aesthetic - is a masterclass in character differentiation and consistent art direction.</p>
+                            <div>
+                                <span class="design-tag">Character Design</span>
+                                <span class="design-tag">Art Style</span>
+                                <span class="design-tag">Visual Identity</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Game 3: Stardew Valley -->
+                    <div class="game-card">
+                        <div class="game-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkeLlFQDTHsYjSHtbBsInAYl2aIF54Qz_8zQ&s" alt="Stardew Valley">
+                        </div>
+                        <div class="game-content">
+                            <h3>Stardew Valley</h3>
+                            <p>Charming pixel art and soothing color palettes. Created by one developer, it shows how consistent art direction and attention to small details create an immersive, beloved world.</p>
+                            <div>
+                                <span class="design-tag">Pixel Art</span>
+                                <span class="design-tag">Color Palettes</span>
+                                <span class="design-tag">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Game 4: Detroit: Become Human -->
+                    <div class="game-card">
+                        <div class="game-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfWZezk4tpamDZ6FRRtW1MEnQuWfU_2w4YrQ&s" alt="Detroit: Become Human">
+                        </div>
+                        <div class="game-content">
+                            <h3>Detroit: Become Human</h3>
+                            <p>Stunning cinematic visuals and branching narratives. The UI design and how choices impact the story fascinate me - it's like interactive storytelling at its finest.</p>
+                            <div>
+                                <span class="design-tag">Cinematic UI</span>
+                                <span class="design-tag">Branching Narratives</span>
+                                <span class="design-tag">Visual Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="project-grid">
+                    <article class="project-card card">
+                        <div class="project-image media-frame">
+                            <img src="preview.png" alt="Calculator Project">
+                        </div>
+                        <div class="project-content">
+                            <h3>Interactive Calculator</h3>
+                            <p>A fully functional calculator built with HTML, CSS, and JS. Handles basic arithmetic with a sleek UI.</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                             <a href="https://tonimoringa.github.io/Lab-Part-1-JavaScript-Calculator/" class="btn btn-primary btn-small">View Project →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card card">
+                        <div class="project-image media-frame">
+                            <img src="whiteboard.png" alt="Second Project">
+                        </div>
+                        <div class="project-content">
+                            <h3>iDraw</h3>
+                            <p>A previous lab project that works as a Freehand Notebook.</p>
+                            <div class="project-tags">
+                                <span class="tag">DOM</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Data Structures</span>
+                            </div>
+                            <a href="https://tonimoringa.github.io/Lab-Part-1-JavaScript-Calculator/" class="btn btn-primary btn-small">View Project →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Antonia Muthwa · Built with passion</p>
+            <div class="footer-links">
+                <a href="https://github.com/ToniMoringa" target="_blank" class="footer-link">GitHub</a>
+                <a href="#" class="footer-link">Twitter</a>
+                <a href="#" class="footer-link">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("Portfolio Loaded Successfully");
+
+            // Dark/Light mode toggle
+            const modeToggle = document.getElementById('modeToggle');
+            const icon = modeToggle.querySelector('i');
+            
+            // Check for saved preference
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+
+            modeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                
+                if (document.body.classList.contains('dark-mode')) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+
+            // Simple interaction: Alert when a project is clicked
+            const projects = document.querySelectorAll('.project-card');
+            
+            projects.forEach(project => {
+                project.addEventListener('click', () => {
+                    console.log("Project viewed!");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
