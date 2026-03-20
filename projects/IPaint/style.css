@@ -1,0 +1,308 @@
+
+    /* ✿ Page Uniformity */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Yellowtail&family=Young+Serif&display=swap');
+    :root{
+      
+      --hover-color: #CBAF80;
+      --accent-color: #d08e55;
+      --text-color: #000000;
+      --main-blue: #df632a;
+    }
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html{
+      font-family: "Montserrat", serif;
+      font-weight: 400;
+      font-style: normal;
+      color: var(--text-color);
+      scroll-behavior: smooth; /*For bookmark links*/
+    }
+    body{
+      min-height: 100vh;
+      min-height: 100dvh;
+      background-color: #f0edeb;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+    @keyframes fadeIn {
+      to {
+          opacity: 1;
+      }
+    }
+    /* custom font  */
+    @font-face {
+      font-family: 'FontOne';
+      src: url('assets/Fonts/y-1999-k-sans.ttf') format('truetype');
+    }
+    h1 {
+      font-family: 'FontOne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    /* custom font  */
+    main{
+        padding: min(5em, 7%);
+         }
+      nav{
+        background-color: #f0edeb;
+        border-bottom: 1px solid var(--hover-color);
+        }
+    nav ul{
+          list-style: none;
+          display: flex;
+          }
+    nav .home-li{
+              margin-right: auto;
+              }
+    nav li{
+          display: flex;
+          }
+    nav a{
+        display: flex;
+        text-decoration: none;
+        color: var(--text-color);
+        padding: 1em 2em;
+        transition: background-color 150ms ease;
+        }
+    nav a:hover{
+              background-color: var(--hover-color);
+              }
+    nav a.active-link{
+                      border-bottom: 2px solid var(--text-color);
+                      }
+    nav a.accent-link{
+                      background-color: var(--accent-color);
+                      }
+    #open-sidebar-button{
+      display: none;
+      background: none;
+      border: none;
+      padding: 1em;
+      margin-left: auto;
+      cursor: pointer;
+      }
+    #close-sidebar-button{
+      display: none;
+      background: none;
+      border: none;
+      padding: 1em;
+      cursor: pointer;
+      }
+    #overlay{
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      inset: 0;
+      z-index: 9;
+      display: none;
+      }
+    .skip-link {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      background-color: var(--accent-color); 
+      color: #ffffff; 
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: opacity 0.3s ease;
+      }
+
+    .skip-link:focus {
+      opacity: 1; 
+      pointer-events: auto; 
+      outline: 3px solid #ffffff; 
+      }
+    @media screen and (max-width: 700px) {
+      #open-sidebar-button, #close-sidebar-button{
+      display: block;
+      }
+      nav{
+          position: fixed;
+          top: 0;
+          right: -100%;
+          height: 100vh;
+          width: min(15em, 100%);
+          z-index: 10;
+          border-left: 1px solid var(--hover-color);
+          transition: right 300ms ease-in-out;
+          }
+      nav.show{
+              right: 0;
+              }
+      nav.show ~ #overlay{
+                          display: block;
+                          }
+      nav ul{
+            width: 100%;
+            flex-direction: column;
+            }
+      nav a{
+            width: 100%;
+            padding-left: 2.5em;
+            }
+      nav a.active-link{
+                        border-bottom: none;
+                        }
+      nav .home-li{
+                  margin-right: unset;
+                  }
+      /* Media queries for responsiveness */
+      @media (max-width: 768px) {
+                      #clock {
+                      font-size: 3.5rem;
+                      margin-top: 10rem;
+                      margin-right: 44rem;
+                          }
+                            }
+        }
+    /* ✿ Page Uniformity */
+    /* ✿  sticker  */
+    .sticker {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    cursor: grab;
+    user-select: none;
+    z-index: 2; /* Ensure stickers are above other elements */
+    }
+    /* Individual Stickers */
+    #sticker1 {
+    top: 50px;
+    left: 50px;
+    }
+
+    #sticker2 {
+    top: 200px;
+    left: 200px;
+    }
+
+    #sticker3 {
+      top: 350px;
+      left: 350px;
+    }
+    /* ✿  sticker  */
+    
+    /* ✿ MS Paint */
+    #MSpaintcontainer {
+      border: 2px dashed #3C382F;
+      border-radius: 30px;
+      background: radial-gradient(50% 50% at 50% 50%, #F5CEE1 0%, #FFF7FB 92%);
+      box-shadow: 10px 10px 8px #727070;
+      padding: 20px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: scale3d(2.5, 1.2, 0.3);
+      transform: translate(-50%, -40%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
+    /* Canvas styling */
+    #canvas {
+      border: 3px solid #6c5d44;
+      border-radius: 10px;
+      align-items: center;
+      background-color: white;
+      touch-action: double-tap-zoom;
+      cursor: crosshair;
+      
+      }
+    /* Buttons for all states */
+    .btn,
+    .btn:focus,
+    .btn:hover,
+    .btn:active,
+    .btn-outline-primary,
+    .btn-outline-primary:focus,
+    .btn-outline-primary:hover,
+    .btn-outline-danger,
+    .btn-outline-danger:focus,
+    .btn-outline-danger:hover,
+    .btn-success,
+    .btn-success:focus,
+    .btn-success:hover {
+      background-color: #ff99cc !important;
+      border-color: #ff66b2 !important;
+      color: white !important;
+      border-radius: 30px;
+      }
+    .btn:active,
+    .btn-outline-primary:active,
+    .btn-outline-danger:active,
+    .btn-success:active {
+                          background-color: #ff66b2 !important;
+                          border-color: #ff3385 !important;
+                          }
+    .tool-btn.active {
+                        background-color: #ff66b2 !important;
+                        color: white !important;
+                        }
+    .color-preview {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #333;
+    }
+    .pressure {
+    margin-top: 10px;
+    font-weight: bold;
+    }
+    /* Vertical Brush Size Slider Styled in Pink */
+    #brushSize {
+    transform: rotate(-90deg);
+    position: relative;
+    left: 70px;
+    top:50px;
+    width: 200px;
+    -webkit-appearance: none;
+    appearance: none;
+    accent-color: #ff66b2;
+    margin: 20px 0;
+    }
+    input[type=range] {
+    background: transparent;
+    }
+    #brushSize::-webkit-slider-runnable-track {
+    height: 8px;
+    background: #ff99cc;
+    border: none;
+    border-radius: 4px;
+    }
+    #brushSize::-moz-range-track {
+    height: 8px;
+    background: #ff99cc;
+    border: none;
+    border-radius: 4px;
+    }
+    #brushSize::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ff66b2;
+    border: none;
+    border-radius: 50%;
+    margin-top: -6px;
+    }
+    #brushSize::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ff66b2;
+    border: none;
+    border-radius: 50%;
+    }
+    /* SVG icon styling inside buttons */
+    .tool-btn svg {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    }
+    /*✿ MS Paint */
+

@@ -779,7 +779,7 @@
                     <img src="icon.png" alt="Antonia Muthwa" class="profile-image">
                 </div>
                 <p class="hero-description">I am an aspiring developer passionate about building functional and beautiful web applications. I love solving problems and constantly learning new technologies.</p>
-        
+            </div>
         </section>
 
         <section id="skills" class="skills-section">
@@ -845,7 +845,6 @@
         <section id="creative" class="creative-section">
             <div class="container">
                 <h2>🎮 Creative Corner</h2>
-            
                 <p class="creative-description">When I'm not coding, you'll find me playing the games below, creating 2D/3D art, or animating. I believe creativity and code go hand in hand!</p>
 
                 <!-- Instagram Feature Card -->
@@ -937,7 +936,7 @@
                 <div class="project-grid">
                     <article class="project-card card">
                         <div class="project-image media-frame">
-                            <img src="preview.png" alt="Calculator Project">
+                            <img src="images/preview.png" alt="Calculator Project">
                         </div>
                         <div class="project-content">
                             <h3>Interactive Calculator</h3>
@@ -953,7 +952,7 @@
 
                     <article class="project-card card">
                         <div class="project-image media-frame">
-                            <img src="whiteboard.png" alt="Second Project">
+                            <img src="images/whiteboard.png" alt="Second Project">
                         </div>
                         <div class="project-content">
                             <h3>iDraw</h3>
@@ -963,7 +962,7 @@
                                 <span class="tag">JavaScript</span>
                                 <span class="tag">Data Structures</span>
                             </div>
-                            <a href="https://tonimoringa.github.io/Lab-Part-1-JavaScript-Calculator/" class="btn btn-primary btn-small">View Project →</a>
+                            <a href="https://tonimoringa.github.io/procanvas-drawing-app/" class="btn btn-primary btn-small">View Project →</a>
                         </div>
                     </article>
                 </div>
@@ -981,46 +980,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Wait for DOM to load
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log("Portfolio Loaded Successfully");
-
-            // Dark/Light mode toggle
-            const modeToggle = document.getElementById('modeToggle');
-            const icon = modeToggle.querySelector('i');
-            
-            // Check for saved preference
-            if (localStorage.getItem('theme') === 'dark') {
-                document.body.classList.add('dark-mode');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            }
-
-            modeToggle.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-                
-                if (document.body.classList.contains('dark-mode')) {
-                    icon.classList.remove('fa-moon');
-                    icon.classList.add('fa-sun');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    icon.classList.remove('fa-sun');
-                    icon.classList.add('fa-moon');
-                    localStorage.setItem('theme', 'light');
-                }
-            });
-
-            // Simple interaction: Alert when a project is clicked
-            const projects = document.querySelectorAll('.project-card');
-            
-            projects.forEach(project => {
-                project.addEventListener('click', () => {
-                    console.log("Project viewed!");
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
